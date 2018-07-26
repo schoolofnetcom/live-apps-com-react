@@ -1,7 +1,22 @@
 import React from 'react';
 
-export default ({ }) => (
+import Header from './../Header/Header';
+import TodoForm from './../TodoForm/TodoForm';
+import TodoItem from './../TodoItem/TodoItem';
+
+export default ({ onAdd, onRemove, todos }) => (
     <div className="container">
-        <h1>Aplicações React - Live Class</h1>
+        <Header />
+
+        <div className="row mt-5">
+            <TodoForm
+                onAdd={onAdd} 
+                />
+        </div>
+
+        <TodoItem
+            todos={todos}
+            onRemove={onRemove} 
+        />
     </div>
 )
